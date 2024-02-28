@@ -57,7 +57,6 @@ class BuildStyles extends Maintenance {
 			ob_start();
 			$resourceLoader->respond( $context );
 			$text = ob_get_clean();
-            wfDebug("Test");
 
 			if ( !file_put_contents( $filename, $text, LOCK_EX ) ) {
 				wfDebug( __METHOD__ . "() failed saving " . $filename );
