@@ -59,7 +59,7 @@ class BuildStyles extends Maintenance {
 			$text = ob_get_clean();
 
 			if ( !file_put_contents( $filename, $text, LOCK_EX ) ) {
-				wfDebug( __METHOD__ . "() failed saving " . $filename() );
+				wfDebug( __METHOD__ . "() failed saving " . $filename );
 				continue;
 			}
 		}

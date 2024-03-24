@@ -1,4 +1,4 @@
-FROM mediawiki:1.37
+FROM mediawiki:1.41.0
 
 COPY ./ /var/www/html/extensions/ThisIsNotAWiki
 COPY ThisIsNotAWikiSettings.php /var/www/html/

@@ -4,8 +4,7 @@ namespace MediaWiki\Extension\ThisIsNotAWiki\Hooks;
 
 class Hider implements
 	\MediaWiki\Hook\ParserOutputPostCacheTransformHook,
-	\MediaWiki\Hook\SidebarBeforeOutputHook,
-	\MediaWiki\Hook\PersonalUrlsHook
+	\MediaWiki\Hook\SidebarBeforeOutputHook
 {
 	/** @inheritDoc */
 	public function onParserOutputPostCacheTransform( $parserOutput, &$text,
@@ -18,10 +17,5 @@ class Hider implements
 	public function onSidebarBeforeOutput( $skin, &$sidebar ): void {
 		unset( $sidebar['TOOLBOX'] );
 		unset( $sidebar['SEARCH'] );
-	}
-
-	/** @inheritDoc */
-	public function onPersonalUrls( &$personal_urls, &$title, $skin ): void {
-		$personal_urls = [];
 	}
 }
